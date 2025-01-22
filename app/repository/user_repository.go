@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"time"
 
 	"github.com/kooroshh/fiber-boostrap/app/models"
 	"github.com/kooroshh/fiber-boostrap/pkg/database"
@@ -27,6 +28,10 @@ func GetUserSessionByToken(ctx context.Context, token string) (models.UserSessio
 	)
 	err = database.DB.Where("token = ?", token).Last(&resp).Error
 	return resp, err
+}
+
+func UpdateUserSessionToken(ctx context.Context, token string, tokenExpired time.Time, refreshToken string) error {
+	return database.DB.Exec("UPDATE user_sessions SET token = ?, token_expired=? WHERE refresh_token = ?", token, tokenExpired, refreshToken).Error
 }
 
 func InsertNewUserSession(ctx context.Context, session *models.UserSession) error {

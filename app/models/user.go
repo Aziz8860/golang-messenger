@@ -20,6 +20,7 @@ func (l User) Validate() error {
 	return v.Struct(l)
 }
 
+// later: ensure refresh_token is unique in the Database
 type UserSession struct {
 	ID                  uint `gorm:"primarykey"`
 	CreatedAt           time.Time

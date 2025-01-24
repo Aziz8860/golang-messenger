@@ -11,6 +11,7 @@ import (
 	"github.com/kooroshh/fiber-boostrap/app/models"
 	"github.com/kooroshh/fiber-boostrap/app/repository"
 	"github.com/kooroshh/fiber-boostrap/pkg/env"
+	"go.elastic.co/apm"
 )
 
 func ServeWSMessaging(app *fiber.App) {
@@ -19,8 +20,8 @@ func ServeWSMessaging(app *fiber.App) {
 
 	app.Get("/message/v1/send", websocket.New(func(c *websocket.Conn) {
 		defer func() {
-			delete(clients, c)
 			c.Close()
+			delete(clients, c)
 		}()
 
 		clients[c] = true // menambahkan koneksi baru ketika ada yang join
@@ -28,15 +29,21 @@ func ServeWSMessaging(app *fiber.App) {
 		for {
 			var msg models.MessagePayload
 			if err := c.ReadJSON(&msg); err != nil {
-				fmt.Println("error payload: ", err)
+				log.Println("error payload: ", err)
 				break // break = tutup koneksi
 			}
+
+			// apm ditaruh disini biar cuma diinisiasi ketika ada yang kirim pesan
+			tx := apm.DefaultTracer.StartTransaction("Send Message", "ws")
+			ctx := apm.ContextWithTransaction(context.Background(), tx)
+
 			msg.Date = time.Now()
-			err := repository.InsertNewMessage(context.Background(), msg)
+			err := repository.InsertNewMessage(ctx, msg)
 			if err != nil {
-				fmt.Println(err)
-				// break
+				log.Println(err)
 			}
+			tx.End() // jangan pake defer karena kalo pake defer, dia bakal dijalankan setelah return
+
 			broadcast <- msg
 		}
 	}))
@@ -48,7 +55,7 @@ func ServeWSMessaging(app *fiber.App) {
 			for client := range clients {
 				err := client.WriteJSON(msg) // ngirim ke client
 				if err != nil {
-					fmt.Println("Failed to write json :", err)
+					log.Println("Failed to write json: ", err)
 					client.Close()
 					delete(clients, client)
 				}

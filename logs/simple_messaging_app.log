@@ -1,0 +1,56 @@
+2025/01/24 00:45:18 Failed to connect to the Database! 
+dial tcp 127.0.0.1:3309: connect: connection refused
+2025/01/24 00:45:36 successfully migrate database!
+2025/01/24 00:45:36 Successfully connected to MongoDB
+2025/01/24 00:46:12 failed to validate request: Error 1062 (23000): Duplicate entry 'ariqaziz4' for key 'users.uni_users_username'
+2025/01/24 00:46:14 failed to parse jwt: token has invalid claims: token is expired
+2025/01/24 00:46:16 failed to get user session on DB:  record not found
+2025/01/24 00:46:17 failed to parse jwt: token has invalid claims: token is expired
+2025/01/24 11:12:34 Failed to connect to the Database! 
+dial tcp 127.0.0.1:3309: connect: connection refused
+2025/01/24 11:12:43 successfully migrate database!
+2025/01/24 11:12:43 Successfully connected to MongoDB
+2025/01/24 11:13:35 failed to insert new message: <nil>
+2025/01/24 11:13:38 error payload:  websocket: close 1001 (going away)
+2025/01/24 13:37:18 successfully migrate database!
+2025/01/24 13:37:18 Successfully connected to MongoDB
+2025/01/24 13:38:44 failed to get user session on DB:  record not found
+2025/01/24 13:38:46 failed to get user session on DB:  record not found
+2025/01/24 13:38:48 failed to parse jwt: token has invalid claims: token is expired
+2025/01/24 13:40:09 failed to validate request: Error 1062 (23000): Duplicate entry 'ariqaziz4' for key 'users.uni_users_username'
+2025/01/24 13:45:42 successfully migrate database!
+2025/01/24 13:45:42 Successfully connected to MongoDB
+2025/01/24 13:45:53 failed to validate request: Error 1062 (23000): Duplicate entry 'ariqaziz4' for key 'users.uni_users_username'
+2025/01/24 13:45:55 failed to get user session on DB:  record not found
+2025/01/24 13:45:56 failed to get user session on DB:  record not found
+2025/01/24 13:45:57 failed to parse jwt: token has invalid claims: token is expired
+2025/01/24 13:47:49 failed to validate request: Error 1062 (23000): Duplicate entry 'ariqaziz4' for key 'users.uni_users_username'
+2025/01/24 13:55:10 successfully migrate database!
+2025/01/24 13:55:11 Successfully connected to MongoDB
+2025/01/24 14:10:44 successfully migrate database!
+2025/01/24 14:10:44 Successfully connected to MongoDB
+2025/01/24 15:02:28 successfully migrate database!
+2025/01/24 15:02:28 Successfully connected to MongoDB
+2025/01/24 15:04:03 failed to insert new message: <nil>
+2025/01/24 15:04:55 successfully migrate database!
+2025/01/24 15:04:55 Successfully connected to MongoDB
+2025/01/24 15:05:02 failed to insert new message: <nil>
+2025/01/24 15:06:12 error payload:  websocket: close 1001 (going away)
+2025/01/24 15:06:58 failed to insert new message: <nil>
+2025/01/24 15:08:00 successfully migrate database!
+2025/01/24 15:08:00 Successfully connected to MongoDB
+2025/01/24 15:09:15 failed to insert new message: <nil>
+2025/01/24 15:10:18 failed to insert new message: <nil>
+2025/01/24 15:10:32 error payload:  websocket: close 1001 (going away)
+2025/01/24 15:11:06 error payload:  websocket: close 1001 (going away)
+2025/01/24 15:11:10 failed to insert new message: <nil>
+2025/01/24 15:11:12 error payload:  websocket: close 1001 (going away)
+2025/01/24 15:12:57 successfully migrate database!
+2025/01/24 15:12:58 Successfully connected to MongoDB
+2025/01/24 15:13:07 error payload:  websocket: close 1001 (going away)
+2025/01/24 15:13:15 failed to insert new message: <nil>
+2025/01/24 15:14:41 failed to insert new message: <nil>
+2025/01/24 15:14:49 error payload:  websocket: close 1001 (going away)
+2025/01/24 15:22:46 successfully migrate database!
+2025/01/24 15:22:46 Successfully connected to MongoDB
+2025/01/24 15:23:44 error payload:  websocket: close 1001 (going away)

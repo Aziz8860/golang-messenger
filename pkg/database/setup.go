@@ -47,5 +47,5 @@ func SetupMongoDB() {
 	coll := client.Database("message").Collection("message_history")
 	MongoDB = coll
 
-	fmt.Println("Successfully connected to MongoDB")
+	log.Println("Successfully connected to MongoDB")
 }

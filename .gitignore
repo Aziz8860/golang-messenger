@@ -106,4 +106,4 @@ fabric.properties
 
 .test.db
 .env
-logs/simple_messaging_app.log
+logs/*

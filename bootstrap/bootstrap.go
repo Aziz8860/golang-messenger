@@ -39,9 +39,13 @@ func NewApplication() *fiber.App {
 }
 
 func SetupLogfile() {
+	err := os.MkdirAll("./logs", os.ModePerm) // Create the folder if it doesn't exist
+	if err != nil {
+		log.Fatal("Failed to create logs directory: ", err)
+	}
 	logFile, err := os.OpenFile("./logs/simple_messaging_app.log", os.O_CREATE|os.O_APPEND|os.O_RDWR, 0666)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Failed to open log file: ", err)
 	}
 	mw := io.MultiWriter(os.Stdout, logFile)
 	log.SetOutput(mw)

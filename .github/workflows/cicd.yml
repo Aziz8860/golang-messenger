@@ -50,7 +50,7 @@ jobs:
             -e DB_NAME="${{ secrets.DB_NAME }}" \
             -e DB_USER="${{ secrets.DB_USER }}" \
             -e DB_PASSWORD="${{ secrets.DB_PASSWORD }}" \
-            -e APP_NAME="${{ secrets.APP_NAME }}" \
+            -e APP_NAME=${{ secrets.APP_NAME }} \
             -e APP_HOST="${{ secrets.APP_HOST }}" \
             -e APP_PORT="${{ secrets.APP_PORT }}" \
             -e APP_PORT_SOCKET="${{ secrets.APP_PORT_SOCKET }}" \

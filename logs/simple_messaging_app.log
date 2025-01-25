@@ -54,3 +54,5 @@ dial tcp 127.0.0.1:3309: connect: connection refused
 2025/01/24 15:22:46 successfully migrate database!
 2025/01/24 15:22:46 Successfully connected to MongoDB
 2025/01/24 15:23:44 error payload:  websocket: close 1001 (going away)
+2025/01/25 15:30:03 successfully migrate database!
+2025/01/25 15:30:03 Successfully connected to MongoDB
